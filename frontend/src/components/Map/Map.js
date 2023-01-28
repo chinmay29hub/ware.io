@@ -1,4 +1,4 @@
-import Slots from './slots'
+import Slots from './Slots'
 function Map() {
     // const mystyle = {
     //     width: "50px",
@@ -9,48 +9,46 @@ function Map() {
     //     margin:"2px",
     //   };
     return (
-    <div>
-        <div>
-            <Slots/>
-            <Slots/>
-            <Slots/>
-            <Slots/>
-            <Slots/>
-            <Slots/>
-            <Slots/>
-            <Slots/>
-            <Slots/>
-            <Slots/>
+        <div style={{ minWidth: "18rem" }}>
+            <div>
+                <Slots />
+                <Slots />
+                <Slots />
+                <Slots />
+                <Slots />
+                <Slots />
+                <Slots />
+                <Slots />
+                <Slots />
+                <Slots />
+            </div><br />
+            <div>
+                <Slots />
+                <Slots />
+                <Slots />
+                <Slots />
+                <Slots />
+                <Slots />
+                <Slots />
+                <Slots />
+                <Slots />
+                <Slots />
+            </div><br />
+            <div>
+                <Slots />
+                <Slots />
+                <Slots />
+                <Slots />
+                <Slots />
+                <Slots />
+                <Slots />
+                <Slots />
+                <Slots />
+                <Slots />
+            </div>
         </div>
-        <div>
-            <Slots/>
-            <Slots/>
-            <Slots />
-            <Slots />
-            <Slots/>
-            <Slots/>
-            <Slots/>
-            <Slots/>
-            <Slots/>
-            <Slots/>
-        </div>
-        <div>
-            <Slots/>
-            <Slots/>
-            <Slots/>
-            <Slots/>
-            <Slots/>
-            <Slots/>
-            <Slots/>
-            <Slots/>
-            <Slots/>
-            <Slots/>
-        </div>
-
-    </div>
 
     );
-  }
-  
-  export default Map;
-  
+}
+
+export default Map;
