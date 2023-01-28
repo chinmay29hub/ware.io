@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
+<<<<<<< HEAD
     <Container fluid style={{ alignContent: "flex-start", justifyContent: "center", height: "100vh", width: "100%" }}>
       <Row style={{ display: "flex", width: "100vw", margin: "0" }}>
         <Col className="col-9 col-sm-9 col-md-9 col-lg-10" style={{ position: "relative" }}>
@@ -104,6 +105,20 @@ function App() {
         <Col className="col-3 col-sm-3 col-md-3 col-lg-2" style={{ position: "absolute", right: "0", backgroundColor: "gray", height: "max-content", padding: "1.5rem" }}>
           <SideNavBar />
         </Col>
+=======
+    // <div className="App">
+
+    // </div>
+    <Container>
+      <Row>
+        <Col>1 of 2</Col>
+        <Col>2 of 2</Col>
+      </Row>
+      <Row>
+        <Col>1 of 3</Col>
+        <Col>2 of 3</Col>
+        <Col>3 of 3</Col>
+>>>>>>> main
       </Row>
     </Container>
   );
