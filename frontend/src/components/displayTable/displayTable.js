@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 
-
 mongoose.connect("mongodb+srv://wareio:bootstrapparadox@cluster0.sqmybub.mongodb.net/?retryWrites=true&w=majority")
 let conn = mongoose.connection
 
