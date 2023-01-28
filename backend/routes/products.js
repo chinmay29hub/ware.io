@@ -17,7 +17,7 @@ router.route("/add").post(
         const date_of_expiry = Date.parse(req.body.date_of_expiry)
         const quantity = Number(req.body.quantity)
         const cost_price = Number(req.body.cost_price)
-        
+
         const newProduct = new Product({
             product_name,
             selling_price,
@@ -35,36 +35,36 @@ router.route("/add").post(
 )
 
 router.route('/:id').get((req, res) => {
-Product.findById(req.params.id)
-    .then(product => res.json(product))
-    .catch(err => res.status(400).json('Error: ' + err));
+    Product.findById(req.params.id)
+        .then(product => res.json(product))
+        .catch(err => res.status(400).json('Error: ' + err));
 });
 
 router.route('/:id').delete((req, res) => {
-Product.findByIdAndDelete(req.params.id)
-    .then(() => res.json('Product deleted.'))
-    .catch(err => res.status(400).json('Error: ' + err));
+    Product.findByIdAndDelete(req.params.id)
+        .then(() => res.json('Product deleted.'))
+        .catch(err => res.status(400).json('Error: ' + err));
 });
 
 router.route('/update/:id').post((req, res) => {
-Product.findById(req.params.id)
-    .then(product => {
-    product.username = req.body.username;
-    product.description = req.body.description;
-    product.duration = Number(req.body.duration);
-    product.date = Date.parse(req.body.date);
+    Product.findById(req.params.id)
+        .then(product => {
+            product.username = req.body.username;
+            product.description = req.body.description;
+            product.duration = Number(req.body.duration);
+            product.date = Date.parse(req.body.date);
 
-    product.product_name = req.body.product_name;
-    product.selling_price = Number(req.body.selling_price)
-    product.date_of_entry = Date.parse(req.body.date_of_entry)
-    product.date_of_exit = Date.parse(req.body.date_of_exit)
-    product.date_of_expiry = Date.parse(req.body.date_of_expiry)
+            product.product_name = req.body.product_name;
+            product.selling_price = Number(req.body.selling_price)
+            product.date_of_entry = Date.parse(req.body.date_of_entry)
+            product.date_of_exit = Date.parse(req.body.date_of_exit)
+            product.date_of_expiry = Date.parse(req.body.date_of_expiry)
 
-    product.save()
-        .then(() => res.json('Product updated!'))
+            product.save()
+                .then(() => res.json('Product updated!'))
+                .catch(err => res.status(400).json('Error: ' + err));
+        })
         .catch(err => res.status(400).json('Error: ' + err));
-    })
-    .catch(err => res.status(400).json('Error: ' + err));
 });
 
 module.exports = router

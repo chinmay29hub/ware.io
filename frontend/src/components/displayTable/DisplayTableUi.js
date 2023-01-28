@@ -10,5 +10,5 @@ fetch("http://localhost:5000/products")
     console.log("No JSON received.")
   })
   .catch((error) => console.error(error));
-console.log(temp())
+
 
