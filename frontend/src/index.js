@@ -4,13 +4,13 @@ import './index.css';
 import App from './App';
 // import reportWebVitals from './reportWebVitals';
 
-import DisplayTableUi from './components/displayTable/DisplayTableUi';
+// import DisplayTableUi from './components/displayTable/DisplayTableUi';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <App />
-    <DisplayTableUi />
+    {/* <DisplayTableUi /> */}
   </React.StrictMode>
 );
 
