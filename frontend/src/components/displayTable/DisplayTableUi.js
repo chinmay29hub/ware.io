@@ -1,9 +1,9 @@
 // import conn from "./displayTable";
 // let hello
-let newProduct;
+let newProduct = {};
 
 async function display () {
-    await fetch("http://localhost:5000/products", {
+    await fetch("http://192.168.1.20:5000/products", {
      method: "GET",
      headers: {
        "Content-Type": "application/json",
