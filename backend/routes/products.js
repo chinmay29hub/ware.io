@@ -4,6 +4,7 @@ let Product = require("../models/product.model")
 router.route("/").get((req, res) => {
     Product.find()
         .then(exercises => res.json(exercises))
+        // .then(exercises => res.send(JSON.stringify(exercises)))
         .catch(err => res.status(400).json("Error : " + err))
 })
 

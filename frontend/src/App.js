@@ -5,16 +5,17 @@ import Container from 'react-bootstrap/Row';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Map from './components/Map/Map';
+// import GetData from './components/displayTable/DisplayTableUi';
 
 function App() {
   return (
-<<<<<<< HEAD
     <Container fluid style={{ alignContent: "flex-start", justifyContent: "center", height: "100vh", width: "100%" }}>
       <Row style={{ display: "flex", width: "100vw", margin: "0" }}>
         <Col className="col-9 col-sm-9 col-md-9 col-lg-10" style={{ position: "relative" }}>
           <Row style={{ display: "flex", gap: "1.5rem", padding: "1.5rem 0.7rem 0rem 1.5rem", height: "max-content" }}>
             <Col style={{ backgroundColor: "wheat", width: "max-content", height: "30vh" }}>
-              <span>Hello</span>
+              <Map />
             </Col>
           </Row>
           <Row style={{ justifyContent: "center", display: "flex", gap: "1.5rem", padding: "1.5rem 0.7rem 0rem 1.5rem" }}>
@@ -105,22 +106,10 @@ function App() {
         <Col className="col-3 col-sm-3 col-md-3 col-lg-2" style={{ position: "absolute", right: "0", backgroundColor: "gray", height: "max-content", padding: "1.5rem" }}>
           <SideNavBar />
         </Col>
-=======
-    // <div className="App">
-
-    // </div>
-    <Container>
-      <Row>
-        <Col>1 of 2</Col>
-        <Col>2 of 2</Col>
       </Row>
-      <Row>
-        <Col>1 of 3</Col>
-        <Col>2 of 3</Col>
-        <Col>3 of 3</Col>
->>>>>>> main
-      </Row>
+      
     </Container>
+    
   );
 }
 

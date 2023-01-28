@@ -1,35 +1,14 @@
-// import conn from "./displayTable";
-// let hello
-let newProduct;
+fetch("http://localhost:5000/products")
+  .then((response) => {
+     const contentType = response.headers.get('content-type');
+     if (!contentType || !contentType.includes('application/json')) {
+       throw new TypeError("Oops, we haven't got JSON!");
+     }
+     return response.json();
+  })
+  .then((data) => {
+      /* process your data further */
+      console.log(data)
 
-async function display () {
-    await fetch("http://localhost:5000/products", {
-     method: "GET",
-     headers: {
-       "Content-Type": "application/json",
-     },
-     body: JSON.stringify(newProduct),
-   })
-   .catch(error => {
-     window.alert(error);
-     return;
-   });
-}
-display()
-
-function DisplayTableUi () {
-    // conn.then((result) => {
-    //         hello = JSON.stringify(result)
-    // }).catch((err) => {
-    //     console.err("Error :"  +  err)
-    // })
-    return (
-        <div>
-        <p>
-            {}
-        </p>
-        </div>
-    );
-}
-
-export default DisplayTableUi
+  })
+  .catch((error) => console.error(error));

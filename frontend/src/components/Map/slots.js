@@ -12,7 +12,7 @@ function Slots() {
         margin:"2px",
       };
       const handleClick=()=>{
-        if(slotColor=="darkseagreen"){setSlotColor("green")}
+        if(slotColor==="darkseagreen"){setSlotColor("green")}
         else setSlotColor("darkseagreen")
       }
     return (
