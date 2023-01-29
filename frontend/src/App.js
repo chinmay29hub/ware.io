@@ -1,6 +1,5 @@
 import './App.css';
 import axios from "axios"
-import SideNavBar from './components/SideNavBar/SideNavBar';
 // import './App.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -8,6 +7,7 @@ import Col from 'react-bootstrap/Col';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Map from './components/Map/Map';
 import React, { useState, useEffect } from 'react';
+import TableRow from './components/TableRow';
 // import Navbar from './components/navbar/Navbar';
 import {
   BrowserRouter,
@@ -80,8 +80,8 @@ function App() {
     
     
     <Container fluid style={{ alignContent: "flex-start", justifyContent: "center", height: "100vh", width: "100%" }}>
-      <Row style={{ display: "flex", width: "100vw", margin: "0" }}>
-        <Col className="col-9 col-sm-9 col-md-9 col-lg-10" style={{ position: "relative" }}>
+      <Row style={{ display: "flex", width: "100%", margin: "0" }}>
+        <Col style={{ position: "relative" }}>
           <Row style={{ display: "flex", gap: "1.5rem", padding: "1.5rem 0.7rem 0rem 1.5rem", height: "max-content" }}>
             <Col style={{ display: "flex", border: "0.1rem solid darkseagreen", borderRadius: "0.5rem", backgroundColor: "#E4FFDA", width: "max-content", height: "max-content", padding: "1rem", justifyContent: "center" }}>
               {/* <span>Hello</span> */}
@@ -89,37 +89,46 @@ function App() {
             </Col>
           </Row>
           <Row style={{ justifyContent: "center", display: "flex", gap: "1.5rem", padding: "1.5rem 0.7rem 0rem 1.5rem" }}>
-            <Col style={{ backgroundColor: "gray", width: "max-content", height: "8rem", padding: "1.5rem" }}>
-              <span>Hello</span>
+            <Col style={{ backgroundColor: "#ffd2d2", border: "0.1rem solid #cda3A3", borderRadius: "0.5rem", width: "max-content", height: "8rem", padding: "1.5rem" }}>
+              <span>Percentage Occupied</span>
             </Col>
-            <Col style={{ backgroundColor: "aqua", width: "max-content", height: "8rem", padding: "1.5rem" }}>
-              <span>Hello</span>
+            <Col style={{ backgroundColor: "#fff8e2", border: "0.1rem solid #cec095", borderRadius: "0.5rem", width: "max-content", height: "8rem", padding: "1.5rem" }}>
+              <span>Total Packages</span>
             </Col>
-            <Col style={{ backgroundColor: "teal", height: "8rem" }}>
-              <span>Hello</span>
+            <Col style={{ backgroundColor: "#eeeaff", border: "0.1rem solid #8f85c4", borderRadius: "0.5rem", height: "8rem",  padding: "1.5rem"  }}>
+              <span>Total Entries</span>
             </Col>
           </Row>
           <Row style={{ padding: "1.5rem 0.7rem 0rem 1.5rem", }}>
             <Col className="warePackInfoTable">
-              <Row style={{ backgroundColor: "purple", padding: "1rem" }}>
-                <Col style={{ backgroundColor: "red", display: "flex", justifyItems: "center" }}>
-                  <span style={{ padding: "0.5rem" }}>Package No.</span>
+              <Row style={{ backgroundColor: "#E5f4ff", borderRadius: "0.5rem 0.5rem 0rem 0rem", border: "0.1rem solid #7999B1", padding: "1rem" }}> 
+                <Col style={{display: "flex", justifyItems: "center" }}>
+                  <span style={{ padding: "0.5rem" }}>Name</span>
                 </Col>
-                <Col style={{ backgroundColor: "red", display: "flex", justifyItems: "center" }} >
-                  <span style={{ padding: "0.5rem" }}>Package Name</span>
+                <Col style={{ display: "flex", justifyItems: "center" }} >
+                  <span style={{ padding: "0.5rem" }}>Entry</span>
                 </Col>
-                <Col style={{ backgroundColor: "red", display: "flex", justifyItems: "center" }}>
-                  <span style={{ padding: "0.5rem" }}>Quantity</span>
+                <Col style={{ display: "flex", justifyItems: "center" }}>
+                  <span style={{ padding: "0.5rem" }}>Exit</span>
                 </Col>
-                <Col style={{ backgroundColor: "red", display: "flex", justifyItems: "center" }}>
-                  <span style={{ padding: "0.5rem" }}>Health</span>
+                <Col style={{ display: "flex", justifyItems: "center" }}>
+                  <span style={{ padding: "0.5rem" }}>Expiry</span>
+                </Col>
+                <Col style={{ display: "flex", justifyItems: "center" }}>
+                  <span style={{ padding: "0.5rem" }}>Stock</span>
+                </Col>
+                <Col style={{ display: "flex", justifyItems: "center" }}>
+                  <span style={{ padding: "0.5rem" }}>Cost Price</span>
+                </Col>
+                <Col style={{ display: "flex", justifyItems: "center" }}>
+                <Col>
+                </Col>
+                  <span style={{ padding: "0.5rem" }}>Selling Price</span>
                 </Col>
               </Row>
-            </Col>
-          </Row>
 
-          {tableInstance.map((item, index) => (
-            <tr key={index}>
+          {tableInstance.map((item, index) => {
+            /*<tr key={index}>
               <td>{item.product_name}</td>
               <td>{item.selling_price}</td>
               <td>{item.date_of_entry}</td>
@@ -127,8 +136,14 @@ function App() {
               <td>{item.date_of_expiry}</td>
               <td>{item.quantity}</td>
               <td>{item.cost_price}</td>
-            </tr>
-          ))}
+            </tr>*/
+            {return (<TableRow item={item}/>)}})
+          }
+
+              <Row style={{ backgroundColor: "#E5f4ff", borderRadius: "0rem 0rem 0.5rem 0.5rem", borderTop: "none",   border: "0.1rem solid #7999B1",  padding: "1rem", marginBottom: "1.5rem"}}>
+              </Row>
+            </Col>
+          </Row>
           {/* <Row style={{ padding: "0rem 0.7rem 0rem 1.5rem", }}>
             <Col className="warePackInfoTable">
               <Row style={{ backgroundColor: "purple", padding: "1rem" }}>
@@ -147,9 +162,6 @@ function App() {
               </Row>
             </Col>
           </Row> */}
-        </Col>
-        <Col className="col-3 col-sm-3 col-md-3 col-lg-2" style={{ position: "absolute", right: "0", backgroundColor: "gray", height: "max-content", padding: "1.5rem" }}>
-          <SideNavBar />
         </Col>
       </Row>
     </Container>
