@@ -6,6 +6,22 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### First Lets start the Backend(Port 5000)
+
+```
+cd backend
+npm install
+npm start
+```
+
+### Then Lets start the Frontend(Port 3000)
+
+```
+cd frontend
+npm install
+npm start
+```
+
 ### `npm start`
 
 Runs the app in the development mode.\

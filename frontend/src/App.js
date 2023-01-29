@@ -8,6 +8,16 @@ import Col from 'react-bootstrap/Col';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Map from './components/Map/Map';
 import React, { useState, useEffect } from 'react';
+// import Navbar from './components/navbar/Navbar';
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from "react-router-dom";
+import AddProduct from './components/navbar/addProduct';
+import Delete from './components/navbar/deleteProduct';
+import Menu from './components/navbar/Navbar';
+import UpdateProduct from './components/navbar/updateProduct';
 // import TableRow from './components/TableRow'
 // import GetData from './components/displayTable/DisplayTableUi';
 
@@ -56,6 +66,19 @@ function App() {
   // }
 
   return (
+    <>
+    <BrowserRouter>
+        <Menu />
+        <Routes>
+          {/* <Route path="" element={<App />} /> */}
+          <Route path="/addProduct" element={<AddProduct />} />
+          <Route path="/delete" element={<Delete />} />
+          <Route path="/update" element={<UpdateProduct />} />
+        </Routes>
+      </BrowserRouter>
+
+    
+    
     <Container fluid style={{ alignContent: "flex-start", justifyContent: "center", height: "100vh", width: "100%" }}>
       <Row style={{ display: "flex", width: "100vw", margin: "0" }}>
         <Col className="col-9 col-sm-9 col-md-9 col-lg-10" style={{ position: "relative" }}>
@@ -105,7 +128,7 @@ function App() {
               <td>{item.quantity}</td>
               <td>{item.cost_price}</td>
             </tr>
-          ))};
+          ))}
           {/* <Row style={{ padding: "0rem 0.7rem 0rem 1.5rem", }}>
             <Col className="warePackInfoTable">
               <Row style={{ backgroundColor: "purple", padding: "1rem" }}>
@@ -130,6 +153,7 @@ function App() {
         </Col>
       </Row>
     </Container>
+    </>
 
   );
 }
